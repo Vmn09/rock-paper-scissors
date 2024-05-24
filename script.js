@@ -28,20 +28,26 @@ function playRound(humanChoice, computerChoice) {
         return "Draw!";
     } else if (humanChoice === "rock") {
         if (computerChoice === "paper") {
+            computerScore++
             return "You lost!";
         } else {
+            humanScore++
             return "You won!";
         }
     } else if (humanChoice === "paper") {
         if (computerChoice === "scissors") {
+            computerScore++
             return "You lost!";
         } else {
+            humanScore++
             return "You won!";
         }
     } else if (humanChoice === "scissors") {
         if (computerChoice === "rock") {
+            computerScore++
             return "You lost!";
         } else {
+            humanScore++
             return "You won!";
         }
     };
@@ -50,4 +56,15 @@ function playRound(humanChoice, computerChoice) {
 let hV = getHumanChoice();
 let cV = getComputerChoice();
 
-console.log(playRound(hV, cV));
+
+
+function playGame() {
+    for (let i = 0; i==5; i++) {
+        playRound(hV, cV);
+        console.log(playRound(hV, cV));
+        console.log(computerScore);
+        console.log(humanScore);
+    }
+}
+
+playGame()
